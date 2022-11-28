@@ -13,16 +13,24 @@ body
 <body>
    
 <?php
-   $header = "From: twojastara@email.com \nContent-Type:".
-             ' text/plain;charset="UTF-8"'.
-             "\nContent-Transfer-Encoding: 8bit";
-   $to = "ksorokabt@ekonomikzamosc.pl";
-   $subject = "Twoj brat kręci z twoją dziewczyną";
-   $message = "Twoj brat kręci z twoją dziewczyną gdy jesteś w domu zobacz
-   tu: https://tiny.pl/1z7t";
-   mail($to, $subject, $message, $header);
-   ?>
+   $od  = "From: szpieg@gmail.com \r\n";
+$od .= 'MIME-Version: 1.0'."\r\n";
+$od .= 'Content-type: text/html; charset=iso-8859-2'."\r\n";
+$adres = "ksoroka@ekonomikzamosc.pl";
+$tytul = "Twoj brat kręci z twoją dziewczyną";
+$wiadomosc = "<html>
+<head>
+</head>
+<body>
+   Twoj brat kręci z twoją dziewczyną gdy jesteś w domu zobacz
+   tu: <a href="https://tiny.pl/1z7t">Zobacz</a> 
+</body>
+</html>";
 
+// użycie funkcji mail
+mail($adres, $tytul, $wiadomosc, $od);
+
+?>
 
 
 </body>
